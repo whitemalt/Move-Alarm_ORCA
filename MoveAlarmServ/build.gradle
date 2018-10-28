@@ -1,20 +1,20 @@
 buildscript {
     ext {
-        springBootVersion = '1.2.6.RELEASE'
+        springBootVersion = '2.0.6.RELEASE'
     }
     repositories {
         mavenCentral()
     }
     dependencies {
         classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}") 
-        classpath('io.spring.gradle:dependency-management-plugin:0.5.2.RELEASE')
+        classpath('io.spring.gradle:dependency-management-plugin:1.0.6.RELEASE')
     }
 }
 
 apply plugin: 'java'
 apply plugin: 'eclipse'
 apply plugin: 'idea'
-apply plugin: 'spring-boot' 
+apply plugin: org.springframework.boot.gradle.plugin.SpringBootPlugin
 apply plugin: 'io.spring.dependency-management'
 apply plugin: 'war'
 
@@ -34,7 +34,7 @@ dependencies {
     compile('org.springframework.boot:spring-boot-starter-actuator')
     compile('org.springframework.boot:spring-boot-starter-web')
     compile('mysql:mysql-connector-java:5.1.36')
-    compile('com.google.code.gson:gson:2.4')
+    compile('com.google.code.gson:gson:2.8.5')
     testCompile('org.springframework.boot:spring-boot-starter-test') 
 }
 
