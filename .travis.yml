@@ -1,0 +1,15 @@
+language: java
+sudo: true
+
+jobs:
+  include:
+  - stage: test
+    jdk: openjdk8
+    script: "chmod +x ./MoveAlarmServ/gradlew && ./MoveAlarmServ/gradlew build -p ./MoveAlarmServ/"
+    #after_success:
+    #- bash <(curl -s https://codecov.io/bash)
+    
+#branches:
+#  only:
+#  - master
+  
